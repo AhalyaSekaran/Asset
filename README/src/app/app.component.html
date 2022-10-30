@@ -1,0 +1,10 @@
+<div *ngIf="loader" class="cell">
+    <div class="card">
+      <span class="dots-loader">Loading&#8230;</span>
+    </div>
+  </div>
+  
+
+<app-login *ngIf="!authServ.checkLogin()"></app-login>
+<app-sidenav *ngIf="authServ.checkLogin()"></app-sidenav>
+<lib-ng-toast></lib-ng-toast>

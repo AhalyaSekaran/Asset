@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login to Continue</title>
+</head>
+<body style="background-color: #e3eded;">
+<form [formGroup]="loginGroup">
+  <div class="container">
+    <div class="brand-logo">
+    </div>
+    <div class="brand-title text-center">ASSET MANAGER</div>
+    <div class="inputs">
+      <br>
+      <input [(ngModel)]="loginData.empId" formControlName="empId" type="text"   placeholder="Employee Id " />
+      <div *ngIf="empId.invalid && empId.touched || logedIn">
+        <span class="error" *ngIf="empId.errors?.required">Emp Id is required</span>
+        <span class="error" *ngIf="empId.errors?.pattern">Emp id should like this V00304</span>
+    </div>
+      <br>
+      <input [(ngModel)]="loginData.password" formControlName="password"  type="password" placeholder="Password" />
+      <div *ngIf="password.invalid && password.touched || logedIn">
+        <span class="error" *ngIf="password.errors?.required">Password is required</span>
+        <!-- <span class="error" *ngIf="password.errors?.pattern">Password Must Have 8 lettors and 1 Spl charector and 1 number</span> -->
+    </div>
+    </div>
+    <button type="submit" (click)="login()">LOGIN</button>
+  </div>
+</form>
+</body>
+</html>

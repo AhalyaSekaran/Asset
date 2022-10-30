@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>New Asset Name</h1>
+<div mat-dialog-content>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Enter Asset Name</mat-label>
+    <input matInput [(ngModel)]="assetName.assetName">
+  </mat-form-field>
+</div>
+<mat-dialog-actions>
+  <button class="btn btn-success" (click)="addAssetName()">Ok</button>
+  <button mat-dialog-close="true" class="btn btn-danger cancel" >Cancel</button>
+  </mat-dialog-actions>
